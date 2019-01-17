@@ -5,7 +5,7 @@
   RewriteRule ^(.*)$ index.php/$1 [L]
 </IfModule>
 <IfModule authz_core_module>
-    Require all denied
+    Require all granted
 </IfModule>
 <IfModule !authz_core_module>
     Deny from all
