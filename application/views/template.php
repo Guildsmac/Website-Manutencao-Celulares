@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ul>
         <form class="form-inline my-2 my-lg-0 ">
             <a href="<?php echo base_url('index.php/login');?>"><div class ="btn btn-primary my-2 my-sm-0 mr-2">Login</div></a>
-            <button class="btn btn-secondary my-2 my-sm-0 ml-1" type="submit">Registro</button>
+            <a href="<?php echo base_url('index.php/register');?>"><div class ="btn btn-secondary my-2 my-sm-0 mr-2">Registro</div></a>
         </form>
     </div>
 </nav>

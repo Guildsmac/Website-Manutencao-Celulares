@@ -22,12 +22,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container">
         <!-- Example row of columns -->
         <div class="row">
-            <div class="col-md-4">
+            <div class="col">
                 <h2>Compra de componentes</h2>
                 <p>Sabe onde está o problema, sabe como consertar?</br>Compre aqui componentes para a marca e modelo do seu celular para então serem entregues no seu endereço!</p>
                 <p><a class="btn btn-secondary" href="#" role="button">Veja as opções &raquo;</a></p>
             </div>
-            <div class="col-md-3 ml-5">
+            <div class="col">
                 <h2>Solicite a manutenção</h2>
                 <p>Comece por aqui para descrever o seu problema, identificar seu celular e então nos enviar para que possamos consertá-lo e mandá-lo de volta novo em folha!</p>
                 <p><a class="btn btn-secondary" href="#" role="button">Vamos lá &raquo;</a></p>
