@@ -8,6 +8,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class About extends CI_Controller{
     public function index(){
-        $this->template->load('template', 'about');
+        $data = array('sess_data' => $this->session->userdata());
+        $this->template->load('template', 'about', $data);
     }
 }

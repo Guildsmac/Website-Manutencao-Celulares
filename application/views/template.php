@@ -7,6 +7,26 @@
  */
 
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+function getBarStatus($sess_data){
+    if(sizeof($sess_data)<=1) {
+        $loginPage = base_url("index.php/login/");
+        $registerPage = base_url("index.php/register/");
+        return "<a href='$loginPage'><div class ='btn btn-primary my-2 my-sm-0 mr-2'>Login</div></a>
+                <a href='$registerPage'><div class ='btn btn-secondary my-2 my-sm-0 mr-2'>Registro</div></a>";
+    }
+    else {
+        $nome = $sess_data['nome'];
+        $permLevel = $sess_data['perm_level'];
+        $logoutPage = base_url("index.php/login/userLogout");
+        return ("<span class='text-white mr-5 m-0' >Olá, <strong>$nome</strong></span> 
+                <a href='$logoutPage'><div class ='btn btn-danger my-2 my-sm-0 mr-2'>Fazer Logout</div></a>" ).(
+        $permLevel == 1 ?
+            "<a href=''><div class ='btn btn-dark my-2 my-sm-0 mr-2'>Área de Administração</div></a>" : '');
+        }
+}
+
+
 ?>
 <html>
 <head>
@@ -39,9 +59,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0 ">
-            <a href="<?php echo base_url('index.php/login');?>"><div class ="btn btn-primary my-2 my-sm-0 mr-2">Login</div></a>
-            <a href="<?php echo base_url('index.php/register');?>"><div class ="btn btn-secondary my-2 my-sm-0 mr-2">Registro</div></a>
+        <form class="form-inline my-lg-0 ml-auto">
+            <?php echo getBarStatus($sess_data);?>
         </form>
     </div>
 </nav>

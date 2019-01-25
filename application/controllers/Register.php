@@ -2,8 +2,9 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Register extends CI_Controller{
     public function index(){
+        $data = array('sess_data' => $this->session->userdata());
     	$this->load->helper('form');
-        $this->template->load('template', 'register');
+        $this->template->load('template', 'register', $data);
 
     }
 
@@ -16,7 +17,7 @@ class Register extends CI_Controller{
     	$numTelefone = $this->input->post('numTelefone');
     	$cpf = $this->input->post('cpf');
     	$dataNasc = $this->input->post('Data_de_Nascimento');
-    	$this->form_validation->set_rules('email', 'Email', 'required');
+    	$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
     	$this->form_validation->set_rules('Data_de_Nascimento', 'Data de Nascimento', 'required');
     	$this->form_validation->set_rules('endereco', 'Endereço', 'required');
     	$this->form_validation->set_rules('numTelefone', 'Número de Telefone', 'required');
@@ -33,7 +34,7 @@ class Register extends CI_Controller{
     		$data['endereco'] = $endereco;
     		$data['numTelefone'] = $numTelefone;
     		$data['cpf'] = $cpf;
-    		$data['senha'] = $senha;
+    		$data['senha'] = password_hash($senha, PASSWORD_BCRYPT);
     		$data['nome'] = $nome;
     		$data['permissionLevel'] = 0;
     		$this->db->insert('usuario',$data);

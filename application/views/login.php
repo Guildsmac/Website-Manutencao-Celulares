@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			
 			<?php
 				$formAttr = array('id' => 'loginForm');
-				echo form_open("login/userLogin", $formAttr);
+				echo form_open("index.php/login/userLogin", $formAttr);
 					echo "<div class='form-group text-left'>";
 						echo form_label('Endereço de Email', 'email');
 						$formData = array(
