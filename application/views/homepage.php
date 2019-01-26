@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
             <h1 class="display-3">Manutenção de celulares</h1>
             <p class="lead">Bem-vindo!</p><p>Problemas com o seu display? Bateria acaba muito rápido? Está no lugar certo!</p><p>Faça seu cadastro, descreva seu problema e envie o seu eletrônico ao nosso CEP que resolvemos seu problema!</p>
-            <p><a class="btn btn-outline-primary btn-lg" href="#" role="button">Comece agora! &raquo;</a></p>
+            <p><a class="btn btn-outline-primary btn-lg" href="<?php echo base_url('index.php/register/');?>" role="button">Comece agora! &raquo;</a></p>
         </div>
     </div>
 
@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col">
                 <h2>Compra de componentes</h2>
                 <p>Sabe onde está o problema, sabe como consertar?</br>Compre aqui componentes para a marca e modelo do seu celular para então serem entregues no seu endereço!</p>
-                <p><a class="btn btn-secondary" href="#" role="button">Veja as opções &raquo;</a></p>
+                <p><a class="btn btn-secondary" href="<?php echo base_url('index.php/componente/');?>" role="button">Veja as opções &raquo;</a></p>
             </div>
             <div class="col">
                 <h2>Solicite a manutenção</h2>
