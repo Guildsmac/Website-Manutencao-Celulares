@@ -8,9 +8,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller{
     public function index(){
-        $data = array('sess_data' => $this->session->userdata());
-    	$this->load->helper('form');
-        $this->template->load('template', 'login', $data);
+        if(count($this->session->userdata()) <= 1) {
+            $data = array('sess_data' => $this->session->userdata());
+            $this->load->helper('form');
+            $this->template->load('template', 'login', $data);
+        }else{
+            redirect(base_url() . "index.php");
+        }
 
     }
 
@@ -19,28 +23,33 @@ class Login extends CI_Controller{
         redirect(base_url());
     }
 
-    public function userLogin(){
-    	$this->load->library('form_validation');
-    	$email = $this->input->post('email');
-        $senha = $this->input->post('senha');
-        $this->db->where('email', $email);
-        $usuario = $this->db->get('usuario')->result();
-        if(count($usuario)===1){
-            if(password_verify($senha, $usuario[0]->senha)){
-                $data = array(
-                    'nome' => $usuario[0]->nome,
-                    'perm_level' => $usuario[0]->permissionLevel,
-                    'email' => $usuario[0]->email,
-                    'session_id' => $usuario[0]->idUsuario,
-                    'logged_in' => TRUE
-                );
-                $this->session->set_userdata($data);
-                redirect(base_url() . "index.php");
+    public function userLogin()
+    {
+        if (count($this->session->userdata()) <= 1) {
+            $this->load->library('form_validation');
+            $email = $this->input->post('email');
+            $senha = $this->input->post('senha');
+            $this->db->where('email', $email);
+            $usuario = $this->db->get('usuario')->result();
+            if (count($usuario) === 1) {
+                if (password_verify($senha, $usuario[0]->senha)) {
+                    $data = array(
+                        'nome' => $usuario[0]->nome,
+                        'perm_level' => $usuario[0]->permissionLevel,
+                        'email' => $usuario[0]->email,
+                        'session_id' => $usuario[0]->idUsuario,
+                        'logged_in' => TRUE
+                    );
+                    $this->session->set_userdata($data);
+                    redirect(base_url() . "index.php");
+                }
+            } else {
+                $this->session->sess_destroy();
+
+                redirect(base_url() . 'index.php/login/');
             }
         }else{
-            $this->session->sess_destroy();
-
-            redirect(base_url().'index.php/login/');
+            redirect(base_url() . "index.php");
         }
     }
 

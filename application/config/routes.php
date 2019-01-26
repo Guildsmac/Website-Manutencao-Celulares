@@ -51,6 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $route['default_controller'] = 'Homepage';
+$route['componente'] = 'componente';
+$route['componente/(:num)'] = 'componente/buy/$1';
 $route['login'] = 'login';
 $route['about'] = 'about';
 $route['register'] = 'register';

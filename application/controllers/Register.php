@@ -2,9 +2,12 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Register extends CI_Controller{
     public function index(){
-        $data = array('sess_data' => $this->session->userdata());
-    	$this->load->helper('form');
-        $this->template->load('template', 'register', $data);
+        if(count($this->session->userdata())<=1) {
+            $data = array('sess_data' => $this->session->userdata());
+            $this->load->helper('form');
+            $this->template->load('template', 'register', $data);
+        }else
+            redirect(base_url() . "index.php");
 
     }
 

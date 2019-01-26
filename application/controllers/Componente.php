@@ -16,6 +16,35 @@ class Componente extends CI_Controller
         parent::__construct();
     }
 
+    public function confirm_buy(){
+        if(count($this->session->userdata())>1 && key_exists('idUser', $this->input->post()) && key_exists('idComponente', $this->input->post())) {
+            $data['Usuario_idUsuario'] = $this->input->post('idUser');
+            $data['Componente_idComponente'] = $this->input->post('idComponente');
+            $data['dtVenda'] = date("d/m/Y");
+            $this->db->insert('venda', $data);
+            $dados = array('sess_data' => $this->session->userdata(), 'nomeComponente' => $this->input->post('nomeCompra'), 'marcaComponente' => $this->input->post('marcaCompra'));
+            $this->template->load('template', 'compra_sucesso', $dados);
+
+        }else {
+            $data = array('page' => 'Página de Compra');
+            $this->load->view('errors/auth/acesso_negado', $data);
+        }
+
+    }
+
+    public function buy($id){
+        if(count($this->session->userdata())>1) {
+            $this->load->helper('form');
+            $this->load->database();
+            $this->db->where('idComponente', $id);
+            $componente = $this->db->get('componente')->result();
+            $componente = array('sess_data' => $this->session->userdata(), 'data' => $componente[0]);
+            $this->template->load('template', 'compra_componente', $componente);
+
+        }else
+            redirect(base_url() .  'index.php/register');
+    }
+
     public function index()
     {
         $data = array('sess_data' => $this->session->userdata(),
