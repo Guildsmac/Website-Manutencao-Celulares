@@ -22,7 +22,7 @@ function getBarStatus($sess_data){
         return ("<span class='text-white mr-5 m-0' >Olá, <strong>$nome</strong></span> 
                 <a href='$logoutPage'><div class ='btn btn-danger my-2 my-sm-0 mr-2'>Fazer Logout</div></a>" ).(
         $permLevel == 1 ?
-            "<a href=''><div class ='btn btn-dark my-2 my-sm-0 mr-2'>Área de Administração</div></a>" : '');
+            "<a href='index.php/admin/adminhomepage'><div class ='btn btn-dark my-2 my-sm-0 mr-2'>Área de Administração</div></a>" : '');
         }
 }
 
@@ -42,7 +42,7 @@ function getBarStatus($sess_data){
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item <?php if(active_link('homepage')!='') echo 'active';?>">
+            <li class="nav-item <?php if(active_link('Homepage')!='') echo 'active';?>">
                 <a class="nav-link" href="<?php echo base_url();?>">Página Inicial<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item <?php if(active_link('about')!='') echo 'active';?>">
