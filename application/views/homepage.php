@@ -7,15 +7,27 @@
  */
 
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+
 ?>
 <main role="main">
+    <?php
+        function getStartNowHref($sess_data){
+            if(count($sess_data) <= 1){
+                return 'index.php/register/';
+            }else{
+                return 'index.php/componente';
+            }
+        }
 
+
+    ?>
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
             <h1 class="display-3">Manutenção de celulares</h1>
-            <p class="lead">Bem-vindo!</p><p>Problemas com o seu display? Bateria acaba muito rápido? Está no lugar certo!</p><p>Faça seu cadastro, descreva seu problema e envie o seu eletrônico ao nosso CEP que resolvemos seu problema!</p>
-            <p><a class="btn btn-outline-primary btn-lg" href="<?php echo base_url('index.php/register/');?>" role="button">Comece agora! &raquo;</a></p>
+            <p class="lead">Bem-Vindo!</p><p>Problemas com o seu display? Bateria acaba muito rápido? Está no lugar certo!</p><p>Faça seu cadastro, descreva seu problema e envie o seu eletrônico ao nosso CEP que resolvemos seu problema!</p>
+            <p><a class="btn btn-outline-primary btn-lg" href="<?php echo base_url(getStartNowHref($sess_data));?>" role="button">Comece agora! &raquo;</a></p>
         </div>
     </div>
 
@@ -30,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="col">
                 <h2>Solicite a manutenção</h2>
                 <p>Comece por aqui para descrever o seu problema, identificar seu celular e então nos enviar para que possamos consertá-lo e mandá-lo de volta novo em folha!</p>
-                <p><a class="btn btn-secondary" href="#" role="button">Vamos lá &raquo;</a></p>
+                <p><a class="btn btn-secondary" href="<?php echo base_url('index.php/manutencao/');?>" role="button">Vamos lá &raquo;</a></p>
             </div>
         </div>
 
