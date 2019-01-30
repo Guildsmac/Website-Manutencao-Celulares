@@ -20,8 +20,20 @@ class Manutencao extends CI_CONTROLLER{
 			$celulares = $this->db->get('celular')->result();
 			$data = array('sess_data' => $this->session->userdata(), 'celulares' => $celulares);
 			$this->template->load('template', 'manutencao', $data);
+
 		}
 	}
+
+	public function solicita(){
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('problemaInput', 'Problema', 'required',
+            array('required' => 'Você deve inserir o nome do problema'));
+        if($this->form_validation->run() == FALSE){
+            $celulares = $this->db->get('celular')->result();
+            $data = array('sess_data' => $this->session->userdata(), 'celulares' => $celulares);
+            $this->template->load('template', 'manutencao', $data);
+        }
+    }
 }
 
 ?>
