@@ -48,14 +48,14 @@ function getBarStatus($sess_data){
             <li class="nav-item <?php if(active_link('about')!='') echo 'active';?>">
                 <a class="nav-link" href="<?php echo base_url('index.php/about');?>">Sobre a empresa</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Fale conosco</a>
+            <li class="nav-item <?php if(active_link('about')!='') echo 'active';?>">
+                <a class="nav-link" href="<?php echo base_url('index.php/contact');?>">Fale conosco</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Serviços</a>
                 <div class="dropdown-menu" aria-labelledby="dropdown01">
-                    <a class="dropdown-item" href="#">Venda de componentes</a>
-                    <a class="dropdown-item" href="#">Solicitação de Manutenção</a>
+                    <a class="dropdown-item" href="<?php echo base_url('index.php/componente');?>">Venda de componentes</a>
+                    <a class="dropdown-item" href="<?php echo base_url('index.php/manutencao');?>">Solicitação de Manutenção</a>
                 </div>
             </li>
         </ul>

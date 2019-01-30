@@ -7,5 +7,9 @@
  */
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-
-<h1 style="margin-top:60px">Sobre a Empresa</h1>
+<div class="jumbotron">
+    <div class="container">
+        <h1 style="margin-top:60px">Empresa de manutenção criada por Gabriel Sousa e Lian França.<br>
+            Fazemos recebimento de aparelhos de forma online e devolução também pelo correio.</h1>
+    </div>
+</div>

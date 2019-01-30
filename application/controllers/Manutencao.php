@@ -32,6 +32,20 @@ class Manutencao extends CI_CONTROLLER{
             $celulares = $this->db->get('celular')->result();
             $data = array('sess_data' => $this->session->userdata(), 'celulares' => $celulares);
             $this->template->load('template', 'manutencao', $data);
+        }else{
+            $cost = rand(10, 100);
+            $data = array('sess_data' => $this->session->userdata(), 'cost' => $cost);
+            $this->load->database();
+            $data_db['dtPedido'] = date('d/m/y');
+            $data_db['custo'] = $cost;
+            $data_db['Celular_idCelular'] = $this->input->post('modelos');
+            $data_db['Usuario_idUsuario'] = $this->session->userdata('session_id');
+            $data_db['problema'] = $this->input->post('problemaInput');
+            $data_db['descricaoProblema'] = $this->input->post('descProblemaInput');
+            $this->db->insert('manutencao', $data_db);
+            $this->template->load('template', 'manutencao_sucesso', $data);
+
+
         }
     }
 }
