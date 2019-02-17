@@ -25,7 +25,7 @@
                 <th>Excluir</th>
 			</tr>
         <?php
-        if($manutencao!=null){
+        if(isset($manutencao)){
         $formAttr = array('id' => 'loginForm');
         echo form_open("index.php/admin/AdminManutencao/alter_data", $formAttr);
         foreach ($manutencao
