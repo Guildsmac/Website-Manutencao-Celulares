@@ -19,7 +19,7 @@ class AdminHomepage extends CI_Controller
             if($usuario[0]->permissionLevel==1){
                 if(password_verify($senha, $usuario[0]->senha)){
                     $_SESSION['is_verified'] = TRUE;
-                    $this->session->mark_as_temp('is_verified', 300);
+                    $this->session->mark_as_temp('is_verified', 1200);
                     redirect(base_url() . "index.php/admin/AdminHomepage");
                 }
             }else{

@@ -9,7 +9,7 @@
      defined('BASEPATH') OR exit('No direct scripts access allowed');
  ?>
 
-<link type="text/css" href="<?php echo base_url('assets/bootstrap/dist/css/bootstrap.css'); ?>" rel="stylesheet">
+<link type="text/css" href="<?php echo base_url('assets/css/main.css'); ?>" rel="stylesheet">
 <html>
 <head>
     <title>Manutenção de Celulares - Página de Administração</title>
