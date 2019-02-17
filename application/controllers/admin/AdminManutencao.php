@@ -10,6 +10,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class AdminManutencao extends CI_Controller
 {
 
+    public function alter_data(){
+        echo 'kappa';
+    }
+
 	public function index(){
         $this->load->helper('password_confirmer');
         $manutencao = $this->db->get('manutencao')->result();

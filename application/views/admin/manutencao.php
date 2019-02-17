@@ -25,6 +25,8 @@
                 <th>Excluir</th>
 			</tr>
         <?php
+            $formAttr = array('id' => 'loginForm');
+            echo form_open("index.php/admin/AdminManutencao/alter_data", $formAttr);
             foreach($manutencao as $i){
                 ?>
                 <tr>
@@ -82,8 +84,16 @@
                         );
                         echo form_checkbox($checkBoxData);?>
                     </th>
+
                     <?php
             }
             ?>
-	</table> 
+	</table>
+    <?php
+        $buttonData = array(
+            'class' => 'active'
+        );
+        echo form_submit('confirmButton', 'Confirmar Alterações', $buttonData);
+        echo form_close();
+    ?>
 </div>
