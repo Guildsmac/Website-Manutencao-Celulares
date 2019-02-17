@@ -11,7 +11,13 @@ class AdminManutencao extends CI_Controller
 {
 
 	public function index(){
-		$this->template->load('admin/admin_template', 'admin/manutencao');
+        $this->load->helper('password_confirmer');
+        $manutencao = $this->db->get('manutencao')->result();
+        $result = null;
+        if(sizeof($manutencao)>=1)
+            $result = array('manutencao' => $manutencao);
+
+        password_confirmer($this, $this->session->userdata(), 'admin/manutencao', $result);
 	}
 	
 }

@@ -22,61 +22,68 @@
 				<th>Problema</th>
 				<th>Descrição do Problema</th> 
 				<th>Entregue ao Usuário </th>
+                <th>Excluir</th>
 			</tr>
-	    <tr>
-				<td>28/01/2019</td>
-				<td>10/02/2019</td>
-				<td>R$150,00</td>
-				<td>Tela quebrada</td>
-				<td>Fui sair no soco com um amigo na sala de aula e ele chutou o meu celular.</td>
-				<td><label class="switch">
-				<input type="checkbox">
-				<span class="slider round"></span>
-				</label></td>
-		  </tr>
-		  <tr>
-				<td>28/01/2019</td>
-				<td>10/02/2019</td>
-				<td>R$150,00</td>
-				<td>Tela quebrada</td>
-				<td>Fui sair no soco com um amigo na sala de aula e ele chutou o meu celular.</td>
-				<td><label class="switch">
-				<input type="checkbox">
-				<span class="slider round"></span>
-				</label></td>
-		  </tr>
-		  <tr>
-				<td>28/01/2019</td>
-				<td>10/02/2019</td>
-				<td>R$150,00</td>
-				<td>Tela quebrada</td>
-				<td>Fui sair no soco com um amigo na sala de aula e ele chutou o meu celular.</td>
-				<td><label class="switch">
-				<input type="checkbox">
-				<span class="slider round"></span>
-				</label></td>
-		  </tr>
-		  <tr>
-				<td>28/01/2019</td>
-				<td>10/02/2019</td>
-				<td>R$150,00</td>
-				<td>Tela quebrada</td>
-				<td>Fui sair no soco com um amigo na sala de aula e ele chutou o meu celular.</td>
-				<td><label class="switch">
-				<input type="checkbox">
-				<span class="slider round"></span>
-				</label></td>
-		  </tr>
-		  <tr>
-				<td>28/01/2019</td>
-				<td>10/02/2019</td>
-				<td>R$150,00</td>
-				<td>Tela quebrada</td>
-				<td>Fui sair no soco com um amigo na sala de aula e ele chutou o meu celular.</td>
-				<td><label class="switch">
-				<input type="checkbox">
-				<span class="slider round"></span>
-				</label></td>
-  		</tr>
+        <?php
+            foreach($manutencao as $i){
+                ?>
+                <tr>
+                    <th><?php echo $i->dtPedido?></th>
+                    <th><?php echo $i->dtEntrega != '' ? $i->dtEntrega : 'Ainda não entregue.'?></th>
+                    <th><?php
+                        $formData = array(
+                            'name' => 'custo_' . $i->idManutencao,
+                            'class' => 'bota_uma_classe_lian',
+                            'value' => $i->custo,
+                            'style' => 'width:75'
+                        );
+                        echo form_input($formData);
+
+                        ?>
+                    </th>
+                    <th><?php
+                        $formData = array(
+                            'name' => 'nomeProb_' . $i->idManutencao,
+                            'class' => 'bota_uma_classe_lian',
+                            'value' => $i->problema,
+                            'style' => 'width:150'
+
+                        );
+                        echo form_input($formData);
+                        ?>
+                    </th>
+                    <th><?php
+                        $formData = array(
+                            'name' => 'descProb_' . $i->idManutencao,
+                            'class' => 'bota_uma_classe_lian',
+                            'value' => $i->descricaoProblema,
+                            'rows' => 2,
+                            'cols' => 30
+                        );
+                        echo form_textarea($formData);
+                        ?>
+                    </th>
+                    <th>
+                        <?php
+                        $checkBoxData = array(
+                            'name' => 'entregue_' . $i->idManutencao,
+                            'checked' => $i->dtEntrega == '' ? FALSE : TRUE,
+
+                        );
+                        echo form_checkbox($checkBoxData);
+                        ?>
+                    </th>
+                    <th>
+                        <?php
+                        $checkBoxData = array(
+                            'name' => 'excluir_' . $i->idManutencao,
+                            'checked' => FALSE,
+
+                        );
+                        echo form_checkbox($checkBoxData);?>
+                    </th>
+                    <?php
+            }
+            ?>
 	</table> 
 </div>

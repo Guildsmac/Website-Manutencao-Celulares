@@ -33,6 +33,9 @@ class AdminHomepage extends CI_Controller
 
     public function index(){
         $this->load->helper('form');
+        $this->load->helper('password_confirmer');
+        password_confirmer($this, $this->session->userdata(), 'admin/dashboard', null);
+        /*
         if(sizeof($this->session->userdata())>1){
             if($this->session->userdata('perm_level')==1) {
                 if (!isset($_SESSION['is_verified']))
@@ -47,6 +50,7 @@ class AdminHomepage extends CI_Controller
         }else{
             $this->load->view('errors/auth/acesso_negado', array('page' => 'Página de Administração'));
         }
+        */
 
     }
 
