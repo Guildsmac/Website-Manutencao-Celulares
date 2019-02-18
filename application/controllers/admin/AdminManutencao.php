@@ -12,7 +12,6 @@ class AdminManutencao extends CI_Controller
 
     public function alter_data(){
         $post_data = $this->input->post();
-        var_dump($post_data);
         $manutencao = $this->db->get('manutencao')->result();
         foreach($manutencao as $i){
             $id = $i->idManutencao;
