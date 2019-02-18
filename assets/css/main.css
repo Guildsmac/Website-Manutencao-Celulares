@@ -28,7 +28,8 @@
   border-radius: 4px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   justify-content: center;
-  background: white;
+  background-color: #A9A9A9;
+  margin-bottom: 50px;
 }
 
 .listbutton{
@@ -60,6 +61,7 @@ img{
   height: 200px;
   width: 200px;
   border-radius: 10px;
+  padding-top: 10px;
 }
 
 .table{
@@ -67,6 +69,8 @@ img{
   border: 1px solid gray;
   padding: 5px;
   font-family: "apercu",sans-serif;
+  border-collapse:separate;
+  border-radius:6px;
 }
 
 td, th {
@@ -85,7 +89,7 @@ input[type=text]{
   margin: 5px 0 22px 0;
   display: inline-block;
   border: none;
-  background: #f1f1f1;
+  background-color: #e8eeef;
 }
 
 input[type=text]:focus{
