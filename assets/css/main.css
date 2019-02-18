@@ -45,7 +45,7 @@
 	width:60%;
   height:40px;
   background-color: white;
-  font-family: 'TradeGothicLTStd-BdCn20','PT Sans Narrow';
+  font-family: "apercu",sans-serif;
   font-weight: 700;
 }
 
@@ -53,7 +53,7 @@ h1{
 	color:black;
 	padding-top: 2%;
   padding-bottom: 2%; 
-  font-family: "Century Gothic";
+  font-family: "apercu",sans-serif;
 }
 
 img{
@@ -66,7 +66,7 @@ img{
   margin: 0 auto;
   border: 1px solid gray;
   padding: 5px;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-family: "apercu",sans-serif;
 }
 
 td, th {
@@ -118,17 +118,18 @@ b,p{
   font-size: 18px;
   line-height: 25px;
   border-radius: 4px;
-  font-family: "Century Gothic";
+  font-family: "apercu",sans-serif;
 }
 
 .header a.logo {
   font-size: 25px;
   font-weight: bold;
-  font-family: "Century Gothic";
+  font-family: "apercu",sans-serif;
 }
 
 .header a.active {
-  background-color: dodgerblue;
+  font-size: 17px;
+  background-color: #49c5b6;
   color: white;
 }
 
