@@ -19,10 +19,11 @@ function getBarStatus($sess_data){
         $nome = $sess_data['nome'];
         $permLevel = $sess_data['perm_level'];
         $logoutPage = base_url("index.php/login/userLogout");
+        $adminPage = base_url("index.php/admin/adminhomepage");
         return ("<span class='text-white mr-5 m-0' >Olá, <strong>$nome</strong></span> 
                 <a href='$logoutPage'><div class ='btn btn-danger my-2 my-sm-0 mr-2'>Fazer Logout</div></a>" ).(
         $permLevel == 1 ?
-            "<a href='index.php/admin/adminhomepage'><div class ='btn btn-dark my-2 my-sm-0 mr-2'>Área de Administração</div></a>" : '');
+            "<a href='$adminPage'><div class ='btn btn-dark my-2 my-sm-0 mr-2'>Área de Administração</div></a>" : '');
         }
 }
 
