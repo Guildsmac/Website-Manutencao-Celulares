@@ -13,18 +13,18 @@
 		<h1>
 		 	Peças
 		</h1>
-<table class="table">
-		<tr>
-        <th>Nome</th>
-		<th>Marca</th>
-		<th>Modelo</th>
-		<th>Preço</th>
-        </tr>
-        <tr>
-			<td><a href="http://localhost/manutencaodecelulares/index.php/admin/EditaPecas">Display</a></td>
-            <td>Samsung</td>
-            <td>J7</td>
-			<td>R$50,00</td>
-		  </tr>
-</table> 
+        <table class="table">
+            <tr>
+                <th>Nome</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Preço</th>
+            </tr>
+            <tr>
+                <td><a href="http://localhost/manutencaodecelulares/index.php/admin/EditaPecas">Display</a></td>
+                <td>Samsung</td>
+                <td>J7</td>
+                <td>R$50,00</td>
+            </tr>
+        </table> 
 </div>

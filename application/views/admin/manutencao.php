@@ -28,9 +28,7 @@
         if(isset($manutencao)){
         $formAttr = array('id' => 'loginForm');
         echo form_open("index.php/admin/AdminManutencao/alter_data", $formAttr);
-        foreach ($manutencao
-
-        as $i){
+        foreach ($manutencao as $i){
         ?>
         <tr>
             <th><?php echo $i->dtPedido ?></th>
@@ -60,7 +58,7 @@
             <th><?php
                 $formData = array(
                     'name' => 'descProb_' . $i->idManutencao,
-                    'class' => 'bota_uma_classe_lian',
+                    'class' => 'textarea',
                     'value' => $i->descricaoProblema,
                     'rows' => 2,
                     'cols' => 30
@@ -72,6 +70,7 @@
                 <?php
                 $checkBoxData = array(
                     'name' => 'entregue_' . $i->idManutencao,
+                    'class' => 'checkbox',
                     'checked' => $i->dtEntrega == '' ? FALSE : TRUE,
 
                 );
@@ -82,6 +81,7 @@
                 <?php
                 $checkBoxData = array(
                     'name' => 'excluir_' . $i->idManutencao,
+                    'class' => 'checkbox',
                     'checked' => FALSE,
 
                 );

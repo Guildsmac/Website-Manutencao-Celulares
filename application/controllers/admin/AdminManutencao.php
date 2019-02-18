@@ -11,7 +11,7 @@ class AdminManutencao extends CI_Controller
 {
 
     public function alter_data(){
-        var_dump($this->input->post());
+        $this->input->post();
     }
 
 	public function index(){

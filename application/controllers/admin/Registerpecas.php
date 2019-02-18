@@ -34,6 +34,11 @@ class Registerpecas extends CI_Controller{
     		redirect(base_url());
     	}
 
-    }
+	}
+	
+	public function listarComponente(){
+		
+			
+	}
 
 }
