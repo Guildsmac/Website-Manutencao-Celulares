@@ -15,9 +15,11 @@
 		</h1>
 <table class="table">
 		<tr>
-        <th>Usuário</th>
-		<th>Peça</th>
-		<th>ID Venda</th>
+        <th>Nome do cliente</th>
+        <th>Email do cliente</th>
+		<th>Nome do componente</th>
+		<th>Marca do componente</th>
+        <th>Preço da venda</th>
 		<th>Data da Venda</th>
         </tr>
         <tr>
