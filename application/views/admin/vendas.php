@@ -41,6 +41,7 @@ defined('BASEPATH') OR exit('No direct scripts access allowed');
                         $checkBoxData = array(
                             'name' => 'excluir_' . $i['idVenda'],
                             'checked' => FALSE,
+                            'class' => 'checkbox'
 
                         );
                         echo form_checkbox($checkBoxData); ?>
